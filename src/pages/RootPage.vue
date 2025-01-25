@@ -1,7 +1,7 @@
 <script setup>
-import { ref, onMounted } from 'vue';
-
 import { getPokemons } from '@/utils/api/requests';
+
+import { onMounted, ref } from 'vue';
 
 const isLoading = ref(true);
 const list = ref([]);
@@ -16,7 +16,7 @@ onMounted(() => {
 
 <template>
   <main>
-    <h1>Pokemon first gen</h1>
+    <h1>Pokemons</h1>
     <div v-if="isLoading">loading...</div>
     <div v-else className="pokemons_container">
       <div v-for="(pokemon, index) in list" :key="pokemon.name">
