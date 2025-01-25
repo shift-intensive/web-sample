@@ -19,7 +19,7 @@ onMounted(() => {
     <h1>Pokemons</h1>
     <div v-if="isLoading">loading...</div>
     <div v-else className="pokemons_container">
-      <div v-for="(pokemon, index) in list" :key="pokemon.name">
+      <div v-for="(pokemon, index) in list" :key="pokemon.name" class="pokemon">
         <img
           :src="`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`"
           :alt="pokemon.name"
