@@ -1,26 +1,27 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
-import { getPokemonsIsLoading, getPokemonsList } from '../utils/redux/pokemons/seletor';
-import { fetchPokemons } from '../utils/redux/pokemons/thunks';
+import { getPokemonsIsLoading, getPokemonsList } from '../utils/redux/pokemons/seletor'
+import { fetchPokemons } from '../utils/redux/pokemons/thunks'
 
 export function RootPage() {
-  const dispatch = useDispatch();
-  const isLoading = useSelector(getPokemonsIsLoading);
-  const list = useSelector(getPokemonsList);
+  const dispatch = useDispatch()
+  const isLoading = useSelector(getPokemonsIsLoading)
+  const list = useSelector(getPokemonsList)
 
   useEffect(() => {
-    dispatch(fetchPokemons());
-  }, []);
+    dispatch(fetchPokemons())
+  }, [])
 
-  if (isLoading) return <div>loading...</div>;
+  if (isLoading)
+    return <div>loading...</div>
 
   return (
     <>
       <h1>Pokemons</h1>
-      <div className='pokemons_container'>
+      <div className="pokemons_container">
         {list.map((pokemon, index) => (
-          <div key={pokemon.name} className='pokemon'>
+          <div key={pokemon.name} className="pokemon">
             <img
               src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
                 index + 1
@@ -32,5 +33,5 @@ export function RootPage() {
         ))}
       </div>
     </>
-  );
+  )
 }
