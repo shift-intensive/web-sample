@@ -12,6 +12,6 @@
 
 ## Samples для быстрого старта
 
-- **react/query** - https://github.com/shift-intensiv/frontend-sample/tree/react/query
-- **react/redux** - https://github.com/shift-intensiv/frontend-sample/tree/react/redux
-- **vue** - https://github.com/shift-intensiv/frontend-sample/tree/vue
+- **react/query** - https://github.com/shift-intensive/web-sample/tree/react/query
+- **react/redux** - https://github.com/shift-intensive/web-sample/tree/react/redux
+- **vue** - https://github.com/shift-intensive/web-sample/tree/vue
