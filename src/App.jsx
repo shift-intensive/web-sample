@@ -1,19 +1,21 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { store } from './utils/redux/store';
-import { Provider } from 'react-redux';
+import { Provider } from 'react-redux'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { RootPage } from './pages/root'
 
-import { RootPage } from './pages/root';
-import { ROUTES } from './utils/constants/router';
+import { ROUTES } from './utils/constants/router'
+import { store } from './utils/redux/store'
 
 const router = createBrowserRouter([
   {
     path: ROUTES.ROOT,
-    element: <RootPage />
-  }
-]);
+    element: <RootPage />,
+  },
+])
 
-export const App = () => (
-  <Provider store={store}>
-    <RouterProvider router={router} />
-  </Provider>
-);
+export function App() {
+  return (
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
+  )
+}

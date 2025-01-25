@@ -1,25 +1,25 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { fetchPokemons } from './thunks';
+import { createSlice } from '@reduxjs/toolkit'
+import { fetchPokemons } from './thunks'
 
 const initialState = {
   isLoading: true,
-  list: []
-};
+  list: [],
+}
 
-export const prefix = 'pokemons';
+export const prefix = 'pokemons'
 const pokemonsSlice = createSlice({
   name: 'pokemons',
   initialState,
   extraReducers: (builder) => {
     builder
       .addCase(fetchPokemons.pending, (state) => {
-        state.isLoading = true;
+        state.isLoading = true
       })
       .addCase(fetchPokemons.fulfilled, (state, action) => {
-        state.list = action.payload;
-        state.isLoading = false;
-      });
-  }
-});
+        state.list = action.payload
+        state.isLoading = false
+      })
+  },
+})
 
-export const pokemonsReducer = pokemonsSlice.reducer;
+export const pokemonsReducer = pokemonsSlice.reducer

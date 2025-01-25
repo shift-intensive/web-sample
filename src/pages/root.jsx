@@ -1,10 +1,10 @@
-import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { getPokemonsIsLoading, getPokemonsList } from '../utils/redux/pokemons/seletor';
 import { fetchPokemons } from '../utils/redux/pokemons/thunks';
 
-export const RootPage = () => {
+export function RootPage() {
   const dispatch = useDispatch();
   const isLoading = useSelector(getPokemonsIsLoading);
   const list = useSelector(getPokemonsList);
@@ -17,10 +17,10 @@ export const RootPage = () => {
 
   return (
     <>
-      <h1>Pokemon first gen</h1>
+      <h1>Pokemons</h1>
       <div className='pokemons_container'>
         {list.map((pokemon, index) => (
-          <div key={pokemon.name} className={'pokemon'}>
+          <div key={pokemon.name} className='pokemon'>
             <img
               src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
                 index + 1
@@ -33,4 +33,4 @@ export const RootPage = () => {
       </div>
     </>
   );
-};
+}

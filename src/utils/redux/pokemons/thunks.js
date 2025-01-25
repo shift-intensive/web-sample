@@ -1,8 +1,8 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
+import { createAsyncThunk } from '@reduxjs/toolkit'
 
-import { getPokemons } from '../../api/requests';
+import { getPokemons } from '../../api/requests'
 
 export const fetchPokemons = createAsyncThunk('pokemons/fetchPokemons', async () => {
-  const response = await getPokemons();
-  return response.data.results;
-});
+  const response = await getPokemons()
+  return response.data.results
+})
