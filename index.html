@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ШИФТ PIZZA</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class ='header'>
+        <div class = 'header-line'> 
+            <div class = 'header-logo'> 
+                <img src ="./svg/logo.svg" alt ="">
+            </div>
+            <div class = 'user'>
+                <div class='user-logo'>
+                    <a class="nav-item" href = "@"> 
+                        <img src ="./svg/user.svg" alt ="">Профиль</a>
+                </div> 
+            </div>
+            <div class = 'orders'>
+                <div class='orders-logo'>
+                    <a class="nav-item" href = "@"> 
+                        <img src ="./svg/time.svg" alt ="">Заказы</a>
+                </div> 
+            </div>
+            <div class = 'cart'>
+                <div class='cart-logo'>
+                    <a class="nav-item" href = "@"> 
+                        <img src ="./svg/cart.svg" alt ="">Корзина</a>
+                </div> 
+            </div>
+        </div>
+        <img src ="./svg/divider.svg" alt ="" width="100%">
+    </div>
+    <div class = 'cards' id = "pizza-list">
+        <div class = 'card'>
+            <div class = 'card-img'>
+                <img class ='card-image' src="./svg/card.png" alt="">
+            </div>
+            <div class="card-desc">
+                <div class="card-title"></div>
+                <div class="card-description"></div>
+                <div class="card-price"></div>
+                <button type="button" class="card-button">Выбрать</button>
+            </div>
+        </div>
+    </div>
+    <div class="popup">
+        <div class="popup-content">
+            <div class="popup-body">
+                <img src="./svg/cross.svg" alt="Закрыть" class="popup-close">
+                <div class="popup-main-container">
+                    <div class="popup-img">
+                        <img class ='card-image' src="./svg/card.svg" alt="">
+                    </div>
+                    <div class="popup-desc">
+                        <div class="popup-description">
+                            <div class="popup-text">
+                                <div class="popup-title">Двойной цыпленок</div>
+                                <div class="popup-size-dough">30 см, традиционное тесто</div>
+                                <div class="popup-ingridients">Цыпленок, моцарелла, фирменный соус альфредо</div>
+                            </div>
+                            <div class="popup-size-selector">
+                                <input type="radio" id="small" name="pizza-size" value="small" checked>
+                                <label for="small">Маленькая</label>
+
+                                <input type="radio" id="medium" name="pizza-size" value="medium">
+                                <label for="medium">Средняя</label>
+
+                                <input type="radio" id="large" name="pizza-size" value="large">
+                                <label for="large">Большая</label>
+                            </div>
+                            <div class="popup-toppings">
+                                <div class="popup-toppings-title">Добавить по вкусу</div>
+                                <div class="popup-toppings-cards">
+                                    <div class="popup-toppings-card">
+                                        <div class="popup-toppings-card-img">
+                                            <img class ='popup-toppings-card-image' src="./svg/card.svg" alt="">
+                                        </div>
+                                        <div class="popup-toppings-card-desc">
+                                            <div class="popup-toppings-card-title">Сырный бортик</div>
+                                            <div class="popup-toppings-card-price">179 ₽</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="popup-toppings-card-button">Добавить в корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
