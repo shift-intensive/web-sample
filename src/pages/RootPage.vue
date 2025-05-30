@@ -1,25 +1,24 @@
 <script setup>
+import { useQuery } from '@tanstack/vue-query';
+
 import { getPokemons } from '@/utils/api/requests';
 
-import { onMounted, ref } from 'vue';
-
-const isLoading = ref(true);
-const list = ref([]);
-
-onMounted(() => {
-  getPokemons().then((response) => {
-    list.value = response.data.results;
-    isLoading.value = false;
-  });
+const getPokemonsQuery = useQuery({
+  queryKey: ['pokemons'],
+  queryFn: getPokemons
 });
 </script>
 
 <template>
   <main>
     <h1>Pokemons</h1>
-    <div v-if="isLoading">loading...</div>
-    <div v-else className="pokemons_container">
-      <div v-for="(pokemon, index) in list" :key="pokemon.name" class="pokemon">
+    <div v-if="getPokemonsQuery.isLoading.value">loading...</div>
+    <div v-else class="pokemons_container">
+      <div
+        v-for="(pokemon, index) in getPokemonsQuery.data.value.data.results"
+        :key="pokemon.name"
+        class="pokemon"
+      >
         <img
           :src="`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`"
           :alt="pokemon.name"

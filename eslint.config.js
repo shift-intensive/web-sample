@@ -1,5 +1,14 @@
-import antfu from '@antfu/eslint-config';
+import { eslint } from '@siberiacancode/eslint';
+import tanstackEslintPluginQuery from '@tanstack/eslint-plugin-query';
 
-export default antfu({
-  vue: true
-});
+/** @type {import('@siberiacancode/eslint').Config} */
+export default eslint(
+  {
+    vue: true
+  },
+  {
+    name: 'web-sample/ignores',
+    ignores: ['src/routeTree.gen.ts']
+  },
+  tanstackEslintPluginQuery.configs['flat/recommended']
+);
