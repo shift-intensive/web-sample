@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
 import { createLazyFileRoute } from '@tanstack/react-router';
 
-import { getPokemons } from '../utils/api/requests';
-import { ROUTES } from '../utils/constants';
+import { getPokemons } from '@/utils/api/requests';
+import { ROUTES } from '@/utils/constants';
 
 export const RootPage = () => {
   const getPokemonsQuery = useQuery({
