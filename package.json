@@ -1,5 +1,5 @@
 {
-  "name": "react",
+  "name": "react/tanstack",
   "type": "module",
   "version": "0.0.0",
   "private": true,
@@ -9,12 +9,12 @@
     "preview": "vite preview",
     "lint": "eslint . --fix",
     "format": "prettier --write .",
-    "pretty": "yarn format && yarn lint",
+    "pretty": "npm run format && npm run lint",
     "lint-inspector": "npx @eslint/config-inspector"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.79.0",
-    "@tanstack/react-router": "^1.120.12",
+    "@tanstack/react-router": "^1.120.13",
     "axios": "^1.9.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
